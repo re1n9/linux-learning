@@ -1,0 +1,582 @@
+
+ Part 1 – Learning the Shell1
+ 1 – What Is the Shell?2
+ Terminal Emulators2
+ Making Your First Keystrokes2
+ Command History3
+ Cursor Movement3
+ A Few Words About Mice and Focus3
+ Try Some Simple Commands4
+ Ending a Terminal Session5
+ The Console Behind the Curtain5
+ Summing Up5
+ Further Reading6
+ 2 – Navigation7
+ Understanding the File System Tree7
+ The Current Working Directory7
+ Listing the Contents of a Directory8
+ Changing the Current Working Directory9
+ Absolute Pathnames9
+ Relative Pathnames9
+ Some Helpful Shortcuts11
+ i
+Important Facts About Filenames11
+ Summing Up12
+ 3 – Exploring the System13
+ Having More Fun with ls13
+ Options and Arguments14
+ A Longer Look at Long Format16
+ Determining a File's Type with file17
+ Viewing File Contents with less17
+ What Is “Text”?17
+ Less Is More19
+ Taking a Guided Tour19
+ Symbolic Links24
+ Hard Links25
+ Summing Up25
+ Further Reading25
+ 4 – Manipulating Files and Directories26
+ Wildcards26
+ Character Ranges28
+ Dot Files28
+ Wildcards Work in the GUI Too29
+ mkdir – Create Directories29
+ cp – Copy Files and Directories30
+ Useful Options and Examples30
+ mv – Move and Rename Files31
+ Useful Options and Examples32
+ rm – Remove Files and Directories33
+ Useful Options and Examples33
+ Be Careful with rm!34
+ ln – Create Links34
+ Hard Links35
+ Symbolic Links35
+ Let's Build a Playground36
+ Creating Directories36
+ Copying Files36
+ Moving and Renaming Files37
+ Creating Hard Links38
+ Creating Symbolic Links39
+ Removing Files and Directories41
+ Creating Symlinks With The GUI42
+ Summing Up43
+ Further Reading43
+ 5 – Working with Commands44
+ What Exactly Are Commands?44
+ Identifying Commands45
+ type – Display a Command's Type45
+ which – Display an Executable's Location45
+ Getting a Command's Documentation46
+ ii
+help – Get Help for Shell Builtins46--help – Display Usage Information47
+ man – Display a Program's Manual Page48
+ apropos – Display Appropriate Commands49
+ whatis – Display One-line Manual Page Descriptions50
+ The Most Brutal Man Page Of Them All50
+ info – Display a Program's Info Entry51
+ README and Other Program Documentation Files52
+ Creating Our Own Commands with alias52
+ Summing Up55
+ Further Reading55
+ 6 – Redirection56
+ Standard Input, Output, and Error56
+ Redirecting Standard Output57
+ Group Commands59
+ Redirecting Standard Error59
+ Redirecting Standard Output and Standard Error to One File60
+ Disposing of Unwanted Output61
+ /dev/null In Unix Culture61
+ Redirecting Standard Input61
+ cat – Concatenate Files61
+ Pipelines63
+ The Difference Between > and |64
+ Filters65
+ uniq - Report or Omit Repeated Lines65
+ wc – Print Line, Word, and Byte Counts66
+ grep – Print Lines Matching a Pattern66
+ head / tail – Print First / Last Part of Files67
+ tee – Read from Stdin and Output to Stdout and Files69
+ Summing Up69
+ Linux Is About Imagination70
+ 7 – Seeing the World as the Shell Sees It71
+ Expansion71
+ Pathname Expansion72
+ Pathname Expansion of Hidden Files73
+ Tilde Expansion73
+ Arithmetic Expansion74
+ Brace Expansion75
+ Parameter Expansion76
+ Command Substitution77
+ Quoting78
+ Double Quotes79
+ Single Quotes81
+ Escaping Characters81
+ Backslash Escape Sequences82
+ Summing Up83
+ Further Reading83
+ iii
+8 – Advanced Keyboard Tricks84
+ Command Line Editing84
+ Cursor Movement84
+ Modifying Text85
+ Cutting and Pasting (Killing and Yanking) Text85
+ The Meta Key86
+ Completion86
+ Programmable Completion88
+ Using History88
+ Searching History89
+ History Expansion91
+ script92
+ Summing Up92
+ Further Reading92
+ 9 – Permissions93
+ Users, Group Members, and Everybody Else94
+ Reading, Writing, and Executing95
+ chmod – Change File Mode97
+ What the Heck is Octal?98
+ Setting File Mode with the GUI101
+ umask – Set Default Permissions102
+ Some Special Permissions104
+ Changing Identities105
+ su – Run a Shell with Substitute User and Group IDs105
+ sudo – Execute a Command as Another User107
+ Modern Linux Distributions and sudo108
+ chown – Change File Owner and Group108
+ chgrp – Change Group Ownership109
+ Exercising Our Privileges110
+ Changing Your Password112
+ Summing Up113
+ Further Reading113
+ 10 – Processes114
+ How a Process Works114
+ Viewing Processes115
+ Viewing Processes Dynamically with top118
+ Controlling Processes120
+ Interrupting a Process121
+ Putting a Process in the Background122
+ Returning a Process to the Foreground123
+ Stopping (Pausing) a Process123
+ Changing Process Priority124
+ Signals125
+ Sending Signals to Processes with kill126
+ Making a Process Hangup Proof129
+ Sending Signals to Multiple Processes with killall129
+ Shutting Down the System130
+ iv
+More Process-Related Commands130
+ Summing Up131
+ Part 2 – Configuration and the Environment133
+ 11 – The Environment134
+ What is Stored in the Environment?134
+ Examining The Environment134
+ Some Interesting Variables136
+ How Is The Environment Established?137
+ What's in a Startup File?139
+ Exploring How Child Processes Inherit Their Environments140
+ Launching a Program with a Temporary Environment142
+ Modifying the Environment143
+ Which Files Should We Modify?143
+ Text Editors143
+ Using a Text Editor144
+ Why Comments Are Important147
+ Activating Our Changes148
+ A Little More about Source148
+ Summing Up148
+ Further Reading149
+ 12 – A Gentle Introduction to vi(m)150
+ Why We Should Learn vi150
+ A Little Background151
+ Starting and Stopping vi151
+ Compatibility Mode152
+ Editing Modes153
+ Entering Insert Mode154
+ Saving Our Work154
+ Moving the Cursor Around155
+ Basic Editing156
+ Appending Text156
+ Opening a Line157
+ Deleting Text158
+ Cutting, Copying, and Pasting Text160
+ Joining Lines161
+ Search-and-Replace161
+ Searching Within a Line161
+ Searching the Entire File162
+ Global Search-and-Replace162
+ Editing Multiple Files164
+ Switching Between Files165
+ Opening Additional Files for Editing166
+ Copying Content from One File into Another166
+ Inserting an Entire File into Another167
+ Saving Our Work168
+ Bash Does vi Too169
+ v
+Summing Up170
+ Further Reading170
+ 13 – Customizing the Prompt172
+ Anatomy of a Prompt172
+ Trying Some Alternative Prompt Designs174
+ Adding Color175
+ Terminal Confusion176
+ Moving the Cursor178
+ Saving the Prompt179
+ Summing Up180
+ Further Reading180
+ Part 3 – Common Tasks and Essential Tools181
+ 14 – Package Management182
+ Packaging Systems182
+ How a Package System Works183
+ Package Files183
+ Repositories183
+ Dependencies184
+ High and Low-level Package Tools184
+ Common Package Management Tasks185
+ Finding a Package in a Repository185
+ Installing a Package from a Repository186
+ Installing a Package from a Package File186
+ Removing a Package187
+ Updating Packages from a Repository187
+ Upgrading a Package from a Package File188
+ Listing Installed Packages188
+ Determining Whether a Package is Installed188
+ Displaying Information About an Installed Package189
+ Finding Which Package Installed a File189
+ Distribution-Independent Package Formats190
+ Summing Up191
+ The Linux Software Installation Myth191
+ Further Reading192
+ 15 – Storage Media193
+ Mounting and Unmounting Storage Devices193
+ Viewing a List of Mounted File Systems195
+ Why Unmounting Is Important198
+ Determining Device Names199
+ Creating New File Systems203
+ Manipulating Partitions with parted203
+ Creating a New File System with mkfs207
+ Testing and Repairing File Systems209
+ What the fsck?210
+ Moving Data Directly to and from Devices210
+ vi
+Creating CD-ROM Images211
+ Creating an Image Copy of a CD-ROM211
+ Creating an Image From a Collection of Files211
+ A Program by Any Other Name212
+ Writing CD-ROM Images212
+ Mounting an ISO Image Directly212
+ Blanking a Rewritable CD-ROM212
+ Writing an Image213
+ Verifying Data213
+ Summing Up214
+ Further Reading214
+ 16 – Networking216
+ Examining and Monitoring a Network217
+ ping217
+ traceroute218
+ ip219
+ Transporting Files Over a Network221
+ ftp221
+ lftp – A Better ftp223
+ curl - Transfer a URL224
+ wget - Non-interactive network downloader224
+ Secure Communication with Remote Hosts225
+ ssh225
+ Tunneling with SSH229
+ scp and sftp229
+ An SSH Client for Windows?231
+ Summing Up231
+ Further Reading231
+ 17 – Searching for Files232
+ locate – Find Files the Easy Way232
+ Where Does the locate Database Come From?234
+ find – Find Files the Hard Way234
+ Tests235
+ Operators237
+ Predefined Actions240
+ User-Defined Actions242
+ Improving Efficiency243
+ xargs244
+ Dealing with Funny Filenames244
+ A Return to the Playground245
+ Options247
+ Summing Up248
+ Further Reading248
+ 18 – Archiving and Backup249
+ Compressing Files249
+ gzip250
+ bzip2252
+ vii
+Don’t Be Compressive Compulsive253
+ Archiving Files253
+ tar254
+ zip259
+ Synchronizing Files and Directories261
+ Using rsync Over a Network264
+ Summing Up265
+ Further Reading265
+ 19 – Regular Expressions266
+ What are Regular Expressions?266
+ grep266
+ Metacharacters and Literals269
+ The Any Character269
+ Anchors270
+ A Crossword Puzzle Helper271
+ Bracket Expressions and Character Classes271
+ Negation272
+ Traditional Character Ranges272
+ POSIX Character Classes273
+ Reverting to Traditional Collation Order276
+ POSIX Basic vs Extended Regular Expressions277
+ POSIX278
+ Alternation278
+ Quantifiers279
+ ? - Match an Element Zero or One Time279
+ * - Match an Element Zero or More Times280
+ + - Match an Element One or More Times281
+ { } - Match an Element a Specific Number of Times281
+ Putting Regular Expressions to Work282
+ Validating a Phone List With grep282
+ Finding Ugly Filenames with find284
+ Searching for Files with locate284
+ Searching for Text with less and vim285
+ Summing Up286
+ Further Reading287
+ 20 – Text Processing288
+ Applications of Text288
+ Documents289
+ Web Pages289
+ Email289
+ Printer Output289
+ Program Source Code289
+ Revisiting Some Old Friends290
+ cat290
+ MS-DOS Text vs Unix Text291
+ sort292
+ uniq299
+ Slicing and Dicing301
+ viii
+cut301
+ Expanding Tabs304
+ paste305
+ join306
+ tac309
+ rev309
+ Comparing Text310
+ comm310
+ diff311
+ patch314
+ Editing on the Fly315
+ tr315
+ ROT13: The Not-So-Secret Decoder Ring316
+ sed317
+ People Who Like sed Also Like326
+ aspell326
+ Summing Up330
+ Further Reading330
+ Extra Credit331
+ 21 – Formatting Output332
+ Simple Formatting Tools332
+ nl – Number Lines332
+ fold – Wrap Each Line to a Specified Length336
+ fmt – A Simple Text Formatter337
+ pr – Format Text for Printing340
+ printf – Format and Print Data341
+ Document Formatting Systems345
+ groff346
+ Summing Up352
+ Further Reading352
+ 22 – Printing354
+ A Brief History of Printing354
+ Printing in the Dim Times354
+ Character-Based Printers355
+ Graphical Printers356
+ Printing with Linux357
+ Preparing Files for Printing357
+ pr – Convert Text Files for Printing357
+ Sending a Print Job to a Printer359
+ lpr – Print Files (Berkeley Style)359
+ lp – Print Files (System V Style)360
+ Another Option: a2ps361
+ Monitoring and Controlling Print Jobs364
+ lpstat – Display Print System Status364
+ lpq – Display Printer Queue Status365
+ lprm / cancel – Cancel Print Jobs366
+ Summing Up366
+ Further Reading366
+ ix
+23 – Compiling Programs367
+ What is Compiling?367
+ Are All Programs Compiled?368
+ Compiling a C Program369
+ Obtaining the Source Code369
+ Examining the Source Tree371
+ Building the Program373
+ Installing the Program377
+ Summing Up378
+ Further Reading378
+ Part 4 – Writing Shell Scripts379
+ 24 – Writing Your First Script380
+ What are Shell Scripts?380
+ How to Write a Shell Script380
+ Script File Format381
+ Executable Permissions382
+ Script File Location382
+ Good Locations for Scripts384
+ More Formatting Tricks384
+ Long Option Names384
+ Indentation and Line-Continuation384
+ Configuring vim For Script Writing385
+ Summing Up386
+ Further Reading386
+ 25 – Starting a Project387
+ First Stage: Minimal Document387
+ Second Stage: Adding a Little Data389
+ Variables and Constants390
+ Assigning Values to Variables and Constants393
+ Here Documents395
+ Summing Up398
+ Further Reading398
+ 26 – Top-Down Design399
+ Shell Functions400
+ Local Variables403
+ Shell Functions and Redirection404
+ Keep Scripts Running406
+ Shell Functions In Your bashrc File409
+ Summing Up409
+ Further Reading409
+ 27 – Flow Control: Branching with if410
+ if410
+ x
+Exit Status411
+ test413
+ File Expressions413
+ String Expressions416
+ Integer Expressions417
+ A More Modern Version of test419
+ (( )) - Designed for Integers420
+ Combining Expressions421
+ Portability is the Hobgoblin of Little Minds424
+ Control Operators: Another Way to Branch424
+ Summing Up425
+ Further Reading426
+ 28 – Reading Keyboard Input427
+ read – Read Values from Standard Input428
+ Options430
+ IFS432
+ You Can’t Pipe read434
+ Validating Input435
+ Menus436
+ Summing Up438
+ Extra Credit438
+ Further Reading438
+ 29 – Flow Control: Looping with while / until440
+ Looping440
+ while441
+ break and continue443
+ select445
+ until448
+ Reading Files with Loops449
+ Summing Up450
+ Further Reading450
+ 30 – Troubleshooting451
+ Syntactic Errors451
+ Missing Quotes452
+ Missing or Unexpected Tokens453
+ Unanticipated Expansions453
+ Logical Errors455
+ Defensive Programming456
+ set -e, set -u, and set -o PIPEFAIL457
+ ShellCheck is Your Friend458
+ Watch Out for Filenames458
+ Portable Filenames459
+ Verifying Input459
+ Design is a Function of Time460
+ Testing460
+ Test Cases461
+ Debugging461
+ xi
+Finding the Problem Area462
+ Tracing462
+ Examining Values During Execution465
+ Summing Up465
+ Further Reading465
+ 31 – Flow Control: Branching with case467
+ case467
+ Patterns469
+ Performing Multiple Actions471
+ Summing Up473
+ Further Reading473
+ 32 – Positional Parameters474
+ Accessing the Command Line474
+ Determining the Number of Arguments475
+ shift – Getting Access to Many Arguments476
+ Simple Applications478
+ Using Positional Parameters with Shell Functions478
+ Handling Positional Parameters en Masse479
+ A More Complete Application482
+ The getopts Option483
+ Interactive Mode485
+ File Output486
+ Summing Up487
+ Further Reading490
+ 33 – Flow Control: Looping with for491
+ for: Traditional Shell Form491
+ Why i?494
+ for: C Language Form494
+ Summing Up496
+ Further Reading497
+ 34 – Strings and Numbers498
+ Parameter Expansion498
+ Basic Parameters498
+ Expansions to Manage Empty Variables499
+ Expansions That Return Variable Names501
+ String Operations501
+ Case Conversion505
+ Arithmetic Evaluation and Expansion507
+ Number Bases507
+ Unary Operators508
+ Simple Arithmetic508
+ Assignment509
+ Bit Operations512
+ Logic513
+ bc – An Arbitrary Precision Calculator Language516
+ xii
+Using bc516
+ An Example Script517
+ Summing Up518
+ Extra Credit519
+ Further Reading519
+ 35 – Arrays520
+ What Are Arrays?520
+ Creating an Array520
+ Assigning Values to an Array521
+ Accessing Array Elements522
+ Array Operations524
+ Outputting the Entire Contents of an Array524
+ Determining the Number of Array Elements525
+ Finding the Subscripts Used by an Array525
+ Assigning Array Elements with read -a526
+ Adding Elements to the End of an Array526
+ Reading a File Into an Array526
+ Slicing an Array528
+ Sorting an Array529
+ Deleting an Array530
+ Associative Arrays531
+ Using Associative Arrays to Simulate Multiple Dimensions532
+ Summing Up534
+ Further Reading534
+ 36 – Exotica535
+ Group Commands and Subshells535
+ Process Substitution540
+ Constructing Commands with eval542
+ Be Careful with eval544
+ A Wordle Helper544
+ Traps548
+ Temporary Files551
+ Asynchronous Execution552
+ wait552
+ Named Pipes554
+ Setting Up a Named Pipe554
+ Using Named Pipes555
+ Summing Up555
+ Further Reading555
+ Index557
+ Colophon570
